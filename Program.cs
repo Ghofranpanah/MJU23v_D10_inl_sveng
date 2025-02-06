@@ -3,6 +3,8 @@
     internal class Program
     {
         static List<SweEngGloss> dictionary;
+        private static string serchWord;
+
         class SweEngGloss
         {
             public string word_swe, word_eng;
@@ -125,12 +127,12 @@
                     else if (argument.Length == 1)
                     {
                         Console.WriteLine("Write word to be translated: ");
-                        string serchWord = Console.ReadLine();
+                        string s = Console.ReadLine();
                         foreach (SweEngGloss gloss in dictionary)
                         {
                             if (gloss.word_swe == serchWord)
                                 Console.WriteLine($"English for {gloss.word_swe} is {gloss.word_eng}");
-                            if (gloss.word_eng == serchWord)
+                            if (gloss.word_eng == s)
                                 Console.WriteLine($"Swedish for {gloss.word_eng} is {gloss.word_swe}");
                         }
                     }
